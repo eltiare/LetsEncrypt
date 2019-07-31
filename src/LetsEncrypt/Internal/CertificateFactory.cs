@@ -86,7 +86,7 @@ namespace McMaster.AspNetCore.LetsEncrypt.Internal
                 }
                 catch { }
 
-                var result = Console.ReadLine().Trim();
+                var result = Console.ReadLine()?.Trim();
                 if (string.IsNullOrEmpty(result)
                     || string.Equals("y", result, StringComparison.OrdinalIgnoreCase))
                 {
@@ -157,7 +157,6 @@ namespace McMaster.AspNetCore.LetsEncrypt.Internal
                         throw InvalidAuthorizationError(hostName, authorization);
                     case EntityStatus.Revoked:
                         throw new InvalidOperationException($"The authorization to verify hostname '{hostName}' has been revoked.");
-                    case EntityStatus.Unknown:
                     default:
                         throw new ArgumentOutOfRangeException("Unexpected response from server while validating domain ownership.");
                 }

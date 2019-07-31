@@ -2,12 +2,12 @@
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 using System;
-using McMaster.AspNetCore.LetsEncrypt;
 using McMaster.AspNetCore.LetsEncrypt.Internal;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
-namespace Microsoft.Extensions.Hosting
+namespace McMaster.AspNetCore.LetsEncrypt
 {
     /// <summary>
     /// Helper methods for configuring Let's Encrypt with an ASP.NET Core server.
